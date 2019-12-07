@@ -51,7 +51,7 @@ function UpcomingBadgeShowcase(props) {
       <div className="badges">
         { medals.map(medal => (
           <div className="each-medal">
-            <figure className="gray-scale" style={{ height: 100 - (medal.achieved/medal.target)*100 }}>
+            <figure className="gray-scale" style={{ height: 80 - (medal.achieved/medal.target)*80 }}>
               <img src={medal.imageUrl} alt="logo" />
             </figure>
             <img className="food-level-1" src={medal.imageUrl} alt="logo" />
