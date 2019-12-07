@@ -16,6 +16,9 @@ const style = (theme) => ({
         bottom: 0,
         borderTop: `1px solid ${theme.palette.primary.main}`
     },
+    navRoot: {
+      padding: '10px 10px'
+    },
     hero: {
         color: '#fff',
         borderRadius: '50%',
@@ -48,6 +51,9 @@ const BottomNav = (props) => {
             color="primary"
             onChange={(event, newValue) => {
                 setValue(newValue);
+            }}
+            classes={{
+              root: classes.navRoot
             }}
             showLabels
             className={classes.root}
