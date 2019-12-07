@@ -19,7 +19,7 @@ const style = (theme) => ({
             marginTop: '-5px',
             backgroundColor: '#fff'
         },
-        background: theme.palette.primary.main,
+        background: '#6f9d64',
         position: 'absolute',
         padding: 5,
         color: '#fff',

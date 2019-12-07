@@ -32,7 +32,7 @@ const BottomNav = (props) => {
             showLabels
             className={classes.root}
         >
-            <BottomNavigationAction label="Profile" icon={<PersonIcon />} component={Link} to="/"/>
+            <BottomNavigationAction label="Badges" icon={<PersonIcon />} component={Link} to="/"/>
             <BottomNavigationAction label="Favorites" icon={<Favorite  />} component={Link} to="/favorites"/>
             <BottomNavigationAction label="Nearby" icon={<LocationOn />} component={Link} to="/NearByOffers"/>
         </BottomNavigation>

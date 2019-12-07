@@ -1,54 +1,40 @@
 .badge-showcase {
     padding: 16px;
-    display: flex;
+
+    &__heading {
+        margin-bottom: 30px;
+        margin-top: 10px;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        color: #4c505c;
+    }
+
+    .badges {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     .each-medal {
+        width: 50%;
         font-weight: bold;
-        width: calc(33.333%);
         text-align: center;
+        margin-bottom: 25px;
 
         img {
-            height: 60px;
+            height: 100px;
+            transition: all 0.3s ease;
 
-            &.food-level-4 {
-                transform: translateY(-4px) scale(1.2);
+            &:hover {
+                transform: scale(1.2);
             }
         }
 
         p {
             font-weight: 100;
         }
-
-        &-disable {
-            img {
-                filter: grayscale(100%);
-            }
-            p {
-                color: #cbcbcb;
-            }
-        }
-    }
-
-    i {
-        font-size: 50px;
-        transform: scale(1);
-        @for $i from 1 through 3 {
-            &.icon-#{$i} {
-                animation: grow 0.5s ease 2s alternate;
-                animation-delay: #{$i * 1}s;
-            }
-        }
-    }
-    .fa-medal.silver {
-        color: #c0c0c0;
-    }
-    .fa-medal.bronze {
-        color: #cd7f32;
-    }
-    .fa-medal.gold {
-        color: #ffcc00;
     }
 }
+
 @keyframes grow {
     0% {
         transform: scale(0.8);

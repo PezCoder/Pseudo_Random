@@ -11,14 +11,14 @@ import NearByOffers from './modules/NearByOffers/containers/NearByOffers';
 
 
 
-import MyHeader from './modules/Commons/components/MyHeader';
+import Header from './modules/Commons/components/Header';
 import BottomNav from './modules/Commons/containers/BottomNav';
 import RouteComponent from './RouteComponent';
 
 //Moving header and footer here as we need Links in them, and link will work inside router
 const Routes = () => (
   <Router>
-    <MyHeader />
+    <Header />
     <Switch>
       <Route
         exact

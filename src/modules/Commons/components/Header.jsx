@@ -56,7 +56,7 @@ const Header = (props) => {
 
   useEffect(() => {
     if (!resumeListLoaded && !isLoadingResumeList) {
-      fetchResumeList();
+      // fetchResumeList();
     }
   }, []);
 
