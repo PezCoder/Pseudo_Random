@@ -32,9 +32,6 @@ const style = (theme) => ({
         color: '#fff',
         fontWeight: 'bold',
         borderRadius: '50% 50% 50% 0',
-        top: '40%',
-        left: '50%',
-        marginLeft: '-115px',
         border: '4px solid #fff',
         width: '60px',
         height: '60px',
@@ -44,6 +41,13 @@ const style = (theme) => ({
         alignItems: 'center',
         fontSize: '10px',
         animation: 'land 0.5s ease 2s alternate',
+    },
+    sm: {
+        transform: 'rotate(-45deg) scale(0.4)',
+        borderColor: '#6f9d64',
+        '& svg': {
+            marginTop: '3px'
+        }
     },
     markerContent: {
         transform: 'rotate(45deg)',
@@ -56,12 +60,16 @@ const style = (theme) => ({
 });
 
 const OfferMarker = (props) => {
-    const {classes, text, category} = props;
+    const {classes, text, category, markerSize} = props;
     const CategoryIcon = CATEGORY_ICON_MAPPING[category];
-    return (<div className={clsx(classes.markerWrapper)}>
+    let sizeCls = 'lg';
+    if (markerSize === 'sm') {
+        sizeCls = 'sm'
+    }
+    return (<div className={clsx(classes.markerWrapper, classes[markerSize])}>
         <div className={classes.markerContent}>
             {CategoryIcon ? (<CategoryIcon className={classes.icon}/>): null}
-            {text}
+            {markerSize === 'lg' ? text: null}
         </div>
     </div>);
 

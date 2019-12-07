@@ -2,10 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import {
-  MuiPickersUtilsProvider,
-} from '@material-ui/pickers';
-import Moment from '@date-io/moment';
 
 import Header from './modules/Commons/containers/Header';
 
@@ -17,7 +13,7 @@ const placeholder = {
 const theme = createMuiTheme({
   palette: {
     white: {500: '#fffff'},
-    primary: { 500: '#26b963' },
+    primary: { 500: '#6f9d64' },
     secondary: { 500: '#000', main: '#000' },
     danger: { 500: '#c61f03', main: '#c61f03' },
   },
@@ -64,12 +60,10 @@ class Theme extends PureComponent {
     const { children, showHeader } = this.props;
     return (
       <MuiThemeProvider theme={theme}>
-        <MuiPickersUtilsProvider utils={Moment}>
           <>
             {showHeader && <Header />}
             {children}
           </>
-        </MuiPickersUtilsProvider>
       </MuiThemeProvider>
     );
   }
