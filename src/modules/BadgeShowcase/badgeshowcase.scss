@@ -1,0 +1,43 @@
+.badge-showcase {
+    padding: 16px;
+    display: flex;
+
+    .each-medal {
+        font-weight: bold;
+        width: calc(33.333%);
+        text-align: center;
+    }
+
+
+    i {
+        font-size: 50px;
+        transform: scale(1);
+        @for $i from 1 through 3 {
+            &.icon-#{$i} {
+                animation: grow 0.5s ease 2s alternate;
+                animation-delay: #{$i * 1}s;
+            }
+        }
+    }
+    .fa-medal.silver {
+        color: #c0c0c0;
+    }
+    .fa-medal.bronze {
+        color: #cd7f32;
+    }
+    .fa-medal.gold {
+        color: #ffcc00;
+    }
+}
+@keyframes grow {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
