@@ -1,5 +1,6 @@
 .badge-showcase {
     padding: 16px;
+    margin-bottom: 30px;
 
     &__heading {
         margin-bottom: 30px;
@@ -18,15 +19,41 @@
         width: 50%;
         font-weight: bold;
         text-align: center;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
+        position: relative;
+
+        .gray-scale {
+            position: absolute;
+            filter: grayscale(100%) blur(1px);
+            z-index: 1;
+            overflow: hidden;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .medal-name {
+            font-weight: 500;
+            font-size: 21px;
+        }
+
+        .medal-details {
+            margin-top: 10px;
+        }
+
+        .medal-value {
+            margin-top: 5px;
+        }
 
         img {
             height: 100px;
             transition: all 0.3s ease;
-
-            &:hover {
-                transform: scale(1.2);
-            }
+            border-radius: 50%;
+            position: relative;
         }
 
         p {
