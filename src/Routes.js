@@ -10,6 +10,8 @@ import Home from './modules/Home/containers/Home';
 import NearByOffers from './modules/NearByOffers/containers/NearByOffers';
 import BadgeShowcase from './modules/BadgeShowcase/BadgeShowcase.js';
 import UpcomingBadgeShowcase from './modules/BadgeShowcase/UpcomingBadgeShowcase.js';
+import StoreList from './modules/Stores/containers/StoreList';
+import StorePage from './modules/Stores/containers/StorePage';
 
 
 import Header from './modules/Commons/components/Header';
@@ -39,6 +41,18 @@ const Routes = () => (
         path="/NearByOffers"
         component= {routeProps => (<RouteComponent name="NearByOffers" Comp={NearByOffers} {...routeProps} />)}
       />
+      <Route
+        exact
+        name="storelist"
+        path="/stores"
+        component= {routeProps => (<RouteComponent name="StoreList" Comp={StoreList} {...routeProps} />)}
+        />
+        <Route
+            exact
+            name="storePage"
+            path="/store/:storeId"
+            component= {routeProps => (<RouteComponent name="StorePage" Comp={StorePage} {...routeProps} />)}
+            />
     </Switch>
     <BottomNav />
   </Router>

@@ -2,10 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import {
-  MuiPickersUtilsProvider,
-} from '@material-ui/pickers';
-import Moment from '@date-io/moment';
 
 import Header from './modules/Commons/containers/Header';
 
@@ -64,12 +60,10 @@ class Theme extends PureComponent {
     const { children, showHeader } = this.props;
     return (
       <MuiThemeProvider theme={theme}>
-        <MuiPickersUtilsProvider utils={Moment}>
           <>
             {showHeader && <Header />}
             {children}
           </>
-        </MuiPickersUtilsProvider>
       </MuiThemeProvider>
     );
   }

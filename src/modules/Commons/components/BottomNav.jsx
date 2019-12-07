@@ -6,6 +6,7 @@ import {BottomNavigation, BottomNavigationAction} from '@material-ui/core';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import { Favorite, LocationOn } from '@material-ui/icons';
 import PersonIcon from '@material-ui/icons/Person';
+import FastfoodIcon from '@material-ui/icons/Fastfood';
 
 
 const style = (theme) => ({
@@ -50,7 +51,7 @@ const BottomNav = (props) => {
         >
             <BottomNavigationAction label="Upcoming Badges" icon={<PersonIcon />} component={Link} to="/"/>
             <BottomNavigationAction label="My Badges" icon={<PersonIcon />} component={Link} to="/badges/all"/>
-            <BottomNavigationAction  label="Pay" icon={<MonetizationOnIcon  />} component={Link} to="/pay"/>
+            <BottomNavigationAction  label="Order Food" icon={<FastfoodIcon  />} component={Link} to="/stores"/>
             <BottomNavigationAction label="Nearby" icon={<LocationOn />} component={Link} to="/NearByOffers"/>
         </BottomNavigation>
     );
