@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 import UserReducer from './UserReducer';
+import BottomSheetReducer from './BottomSheetReducer';
 
 
 const allReducers = combineReducers({
-    user: UserReducer
+    user: UserReducer,
+    bottomSheet: BottomSheetReducer
 });
 
 export default allReducers;

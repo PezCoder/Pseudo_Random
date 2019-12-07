@@ -10,9 +10,9 @@ const style = (theme) => ({
 });
 
 const NearByOffers = (props) => {
-    const {classes} = props;
+    const {classes, showMarkerBottomSheet} = props;
     return (<>
-     <MapView/>
+     <MapView showMarkerBottomSheet={showMarkerBottomSheet}/>
     </>);
 
 };
