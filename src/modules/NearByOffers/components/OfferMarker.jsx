@@ -1,6 +1,13 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { Fastfood, LocalHotel, ShoppingCart } from '@material-ui/icons';
+import clsx from  'clsx';
 
+const CATEGORY_ICON_MAPPING = {
+  food: Fastfood,
+  hotel: LocalHotel,
+  shopping: ShoppingCart
+};
 
 const style = (theme) => ({
     root: {
@@ -29,26 +36,32 @@ const style = (theme) => ({
         left: '50%',
         marginLeft: '-115px',
         border: '4px solid #fff',
-        width: '40px',
-        height: '40px',
+        width: '60px',
+        height: '60px',
         transform: 'rotate(-45deg)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: '12px',
-
+        fontSize: '10px',
+        animation: 'land 0.5s ease 2s alternate',
     },
     markerContent: {
         transform: 'rotate(45deg)',
         textAlign: 'center',
     },
+    icon: {
+        width: '100%',
+        marginTop: '-4px'
+    }
 });
 
 const OfferMarker = (props) => {
-    const {classes} = props;
-    return (<div className={classes.markerWrapper}>
+    const {classes, text, category} = props;
+    const CategoryIcon = CATEGORY_ICON_MAPPING[category];
+    return (<div className={clsx(classes.markerWrapper)}>
         <div className={classes.markerContent}>
-            32% OFF
+            {CategoryIcon ? (<CategoryIcon className={classes.icon}/>): null}
+            {text}
         </div>
     </div>);
 
