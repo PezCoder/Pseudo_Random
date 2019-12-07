@@ -4,7 +4,13 @@ import {
 } from 'react-router-dom';
 import PrivateRoute from './modules/Commons/containers/PrivateRoute';
 import AdminRoute from './modules/Commons/containers/AdminRoute';
+
+
 import Home from './modules/Home/containers/Home';
+import NearByOffers from './modules/NearByOffers/containers/NearByOffers';
+
+
+
 import Header from './modules/Commons/containers/Header';
 import BottomNav from './modules/Commons/containers/BottomNav';
 import RouteComponent from './RouteComponent';
@@ -19,6 +25,12 @@ const Routes = () => (
         name="dashboard"
         path="/"
         component={routeProps => (<RouteComponent name="dashboard" Comp={Home} {...routeProps} />)}
+      />
+      <Route
+        exact
+        name="NearByOffers"
+        path="/NearByOffers"
+        component= {routeProps => (<RouteComponent name="NearByOffers" Comp={NearByOffers} {...routeProps} />)}
       />
     </Switch>
     <BottomNav />

@@ -33,7 +33,7 @@ const BottomNav = (props) => {
         >
             <BottomNavigationAction label="Recents" icon={<Restore />} component={Link} to="/recents"/>
             <BottomNavigationAction label="Favorites" icon={<Favorite  />} component={Link} to="/favorites"/>
-            <BottomNavigationAction label="Nearby" icon={<LocationOn />} component={Link} to="/nearby"/>
+            <BottomNavigationAction label="Nearby" icon={<LocationOn />} component={Link} to="/NearByOffers"/>
         </BottomNavigation>
     );
 }
