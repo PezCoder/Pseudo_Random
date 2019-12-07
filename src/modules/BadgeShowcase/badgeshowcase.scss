@@ -6,8 +6,28 @@
         font-weight: bold;
         width: calc(33.333%);
         text-align: center;
-    }
 
+        img {
+            height: 60px;
+
+            &.food-level-4 {
+                transform: translateY(-4px) scale(1.2);
+            }
+        }
+
+        p {
+            font-weight: 100;
+        }
+
+        &-disable {
+            img {
+                filter: grayscale(100%);
+            }
+            p {
+                color: #cbcbcb;
+            }
+        }
+    }
 
     i {
         font-size: 50px;

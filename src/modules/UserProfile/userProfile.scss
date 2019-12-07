@@ -1,0 +1,65 @@
+.user-profile {
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    display: flex;
+    background: #6f9d64;
+    height: 220px;
+    margin-bottom: 40px;
+    align-items: flex-end;
+    font-family: 'Raleway', sans-serif;
+
+    img {
+        position: absolute;
+        height: 200px;
+        bottom: -31px;
+        left: 10%;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-weight: 100;
+        padding-left: 170px;
+    }
+
+    &__name {
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+
+    &__ratings {
+        display: flex;
+        font-size: 18px;
+        font-weight: 300;
+        align-items: center;
+        margin: 16px 0 25px 0;
+
+        svg {
+            margin-right: 10px;
+            border-radius: 10px;
+            background: #8eb385;
+            padding: 5px;
+            font-size: 21px;
+            color: #c5e6bb;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        letter-spacing: 1px;
+
+        &__value {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        &__name {
+            color: #c5e6bb;
+            font-size: 15px;
+            margin-top: 2px;
+        }
+    }
+}

@@ -4,7 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 
 import {BottomNavigation, BottomNavigationAction} from '@material-ui/core';
 
-import { Restore, Favorite, LocationOn } from '@material-ui/icons';
+import { Favorite, LocationOn } from '@material-ui/icons';
+import PersonIcon from '@material-ui/icons/Person';
 
 
 const style = (theme) => ({
@@ -31,7 +32,7 @@ const BottomNav = (props) => {
             showLabels
             className={classes.root}
         >
-            <BottomNavigationAction label="Recents" icon={<Restore />} component={Link} to="/recents"/>
+            <BottomNavigationAction label="Profile" icon={<PersonIcon />} component={Link} to="/"/>
             <BottomNavigationAction label="Favorites" icon={<Favorite  />} component={Link} to="/favorites"/>
             <BottomNavigationAction label="Nearby" icon={<LocationOn />} component={Link} to="/NearByOffers"/>
         </BottomNavigation>
