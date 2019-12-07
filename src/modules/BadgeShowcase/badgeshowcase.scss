@@ -32,7 +32,7 @@
 
         .gray-scale {
             position: absolute;
-            filter: grayscale(100%) blur(1px);
+            filter: grayscale(100%);
             z-index: 1;
             overflow: hidden;
             margin: 0;
