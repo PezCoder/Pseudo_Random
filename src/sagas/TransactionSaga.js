@@ -27,6 +27,9 @@ function* postTransactions(action) {
 function* fetchOffers(action) {
     let response;
     const {payload = {}} = action;
+    if (payload === null || !payload.latitude) {
+      return;
+    }
     try {
         response = yield call(API.sendRequest, 'get', `/offers?lat=${payload.latitude}&long=${payload.longitude}`);
         yield put({ type: POPULATE_OFFERS, payload: response.data });
