@@ -8,7 +8,8 @@ import AdminRoute from './modules/Commons/containers/AdminRoute';
 
 import Home from './modules/Home/containers/Home';
 import NearByOffers from './modules/NearByOffers/containers/NearByOffers';
-
+import BadgeShowcase from './modules/BadgeShowcase/BadgeShowcase.js';
+import UpcomingBadgeShowcase from './modules/BadgeShowcase/UpcomingBadgeShowcase.js';
 
 
 import Header from './modules/Commons/components/Header';
@@ -22,9 +23,15 @@ const Routes = () => (
     <Switch>
       <Route
         exact
-        name="dashboard"
+        name="upcoming-badges"
         path="/"
-        component={routeProps => (<RouteComponent name="dashboard" Comp={Home} {...routeProps} />)}
+        component={routeProps => (<RouteComponent name="upcoming-badges" Comp={UpcomingBadgeShowcase} {...routeProps} />)}
+      />
+      <Route
+        exact
+        name="all-badges"
+        path="/badges/all"
+        component={routeProps => (<RouteComponent name="all-badges" Comp={BadgeShowcase} {...routeProps} />)}
       />
       <Route
         exact
