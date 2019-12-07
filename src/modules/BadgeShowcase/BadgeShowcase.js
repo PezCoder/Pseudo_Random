@@ -34,8 +34,10 @@ export default function BadgeShowcase() {
       <div className="badges">
         { medals.map(medal => (
           <div className="each-medal">
-            <img className="food-level-1" src={medal.imageUrl} alt="logo" />
-            <p>{ medal.name }</p>
+            <img className="original" src={medal.imageUrl} alt="logo" />
+            <div className="medal-details">
+              <p className="medal-name">{ medal.name }</p>
+            </div>
           </div>
         )) }
       </div>

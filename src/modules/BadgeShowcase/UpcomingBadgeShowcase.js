@@ -13,24 +13,45 @@ import './badgeshowcase.scss';
 
 export default function UpcomingBadgeShowcase() {
   const medals = [{
-    name: 'Foodie',
-    imageUrl: foodie,
-    achieved: 10,
-    target: 20,
+    name: 'Go Vegan!',
+    imageUrl: goVegan,
+    achieved: 40,
+    target: 100,
   }, {
     name: 'Big Foodie',
     imageUrl: bigFoodie,
-    achieved: 10,
-    target: 20,
-  }, ];
+    achieved: 0,
+    target: 100,
+  }, {
+    name: 'Super Foodie',
+    imageUrl: superFoodie,
+    achieved: 0,
+    target: 4,
+  }, {
+    name: 'Connoisseur',
+    imageUrl: connoisseur,
+    achieved: 50,
+    target: 100,
+  }, {
+    name: 'Foodie',
+    imageUrl: foodie,
+    achieved: 40,
+    target: 100,
+  }];
   return (
     <div className="badge-showcase">
       <h4 className="badge-showcase__heading">UPCOMING BADGES</h4>
       <div className="badges">
         { medals.map(medal => (
           <div className="each-medal">
+            <figure className="gray-scale" style={{ height: 100 - (medal.achieved/medal.target)*100 }}>
+              <img src={medal.imageUrl} alt="logo" />
+            </figure>
             <img className="food-level-1" src={medal.imageUrl} alt="logo" />
-            <p>{ medal.name }</p>
+            <div className="medal-details">
+              <p className="medal-name">{ medal.name }</p>
+              <p className="medal-value">{medal.achieved}/{medal.target} Orders</p>
+            </div>
           </div>
         )) }
       </div>
