@@ -7,8 +7,6 @@ import configureStore from './store/Store';
 import Routes from './Routes';
 import Theme from './Theme';
 import AlertMessageSnackBar from './modules/Commons/containers/AlertMessageSnackBar';
-import Header from './modules/Commons/containers/Header';
-
 const storeObject = configureStore();
 const { store, persiststore } = storeObject;
 
@@ -21,7 +19,6 @@ ReactDOM.render(
     <PersistGate persistor={persiststore}>
       <AlertMessageSnackBar />
       <Theme>
-        <Header/>
         <Routes appConfig={APP_CONFIG} />
       </Theme>
     </PersistGate>

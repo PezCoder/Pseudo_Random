@@ -17,8 +17,8 @@ const placeholder = {
 const theme = createMuiTheme({
   palette: {
     white: {500: '#fffff'},
-    primary: { 500: '#075aa0' },
-    secondary: { 500: '#55c6a5', main: '#55c6a5' },
+    primary: { 500: '#26b963' },
+    secondary: { 500: '#000', main: '#000' },
     danger: { 500: '#c61f03', main: '#c61f03' },
   },
   spacing: 8,
