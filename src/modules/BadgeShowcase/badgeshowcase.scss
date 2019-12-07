@@ -8,11 +8,19 @@
         letter-spacing: 0.4px;
         font-weight: 600;
         color: #4c505c;
+        padding-left: 16px;
     }
 
     .badges {
         display: flex;
         flex-wrap: wrap;
+        &.selected {
+            justify-content: center;
+
+            .each-medal {
+                width: auto;
+            }
+        }
     }
 
     .each-medal {

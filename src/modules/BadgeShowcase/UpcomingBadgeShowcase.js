@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import foodie from '../../../public/images/foodie.png';
 import bigFoodie from '../../../public/images/bigFoodie.png';
 import superFoodie from '../../../public/images/superFoodie.png';
@@ -12,13 +12,16 @@ import goVegan from '../../../public/images/goVegan.png';
 import './badgeshowcase.scss';
 import ActionTypes from "../../actions/ActionTypes";
 import {connect} from "react-redux";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 function UpcomingBadgeShowcase(props) {
   const {fetchUpcomingBadges, upcoming} = props;
 
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
   useEffect(() => {
     fetchUpcomingBadges();
-  });
+  }, []);
   const medals = [{
     name: 'Go Vegan!',
     imageUrl: goVegan,
@@ -29,6 +32,7 @@ function UpcomingBadgeShowcase(props) {
     imageUrl: bigFoodie,
     achieved: 0,
     target: 100,
+    text: 'Order 100 food items, to avail this badge.'
   }, {
     name: 'Super Foodie',
     imageUrl: superFoodie,
@@ -45,12 +49,20 @@ function UpcomingBadgeShowcase(props) {
     achieved: 40,
     target: 100,
   }];
+var className = 'badges';
+  if (selectedIndex !== null) {
+    className+= ' selected';
+  }
   return (
     <div className="badge-showcase">
-      <h4 className="badge-showcase__heading">UPCOMING BADGES</h4>
-      <div className="badges">
-        { medals.map(medal => (
-          <div className="each-medal">
+      <h4 className="badge-showcase__heading">
+        { selectedIndex !== null ? <ArrowBackIcon onClick={() => setSelectedIndex(null)} /> : 'UPCOMING BADGES' }
+  </h4>
+      <div className={className}>
+        { medals.filter(
+          (medal, index) => (selectedIndex !== null ? index === selectedIndex : true)
+        ).map((medal, index) => (
+          <div className="each-medal" onClick={() => selectedIndex === null && setSelectedIndex(index)}>
             <figure className="gray-scale" style={{ height: 80 - (medal.achieved/medal.target)*80 }}>
               <img src={medal.imageUrl} alt="logo" />
             </figure>
@@ -58,6 +70,7 @@ function UpcomingBadgeShowcase(props) {
             <div className="medal-details">
               <p className="medal-name">{ medal.name }</p>
               <p className="medal-value">{medal.achieved}/{medal.target} Orders</p>
+              { selectedIndex !== null && <p className="medal-value">{ medal.text }</p> }
             </div>
           </div>
         )) }
