@@ -14,7 +14,7 @@ const stores = [1,2,3,4,5]
 const StoreList = (props) => {
     const {classes} = props;
     return <>
-        {stores.map(store=> (<a href="/store/1"><StoreCard /></a>))}
+        {stores.map(store=> (<Link to="/store/1"><StoreCard /></Link>))}
     </>
 };
 

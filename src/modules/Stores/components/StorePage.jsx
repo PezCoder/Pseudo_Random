@@ -55,8 +55,14 @@ const style = (theme) => ({
     }
 });
 
-const StoreCard = (props) => {
-    const {classes} = props;
+const StorePage = (props) => {
+    const {classes, postTransaction, match} = props;
+
+    console.log('currentRoute', props);
+    const createOrder =  (type) => () => {
+        postTransaction({type, merchantId: match.params.storeId})
+    };
+
     return (
         <div className="App">
             <Card className={classes.card}>
@@ -91,7 +97,7 @@ const StoreCard = (props) => {
                         together to form amazing environment.
                     </Typography>
                     <div className={classes.cta}>
-                        <Button variant="outlined" color="primary"  className={classes.button}>
+                        <Button variant="outlined" color="primary"  className={classes.button} onClick={createOrder('desert')}>
                             Order Desert
                         </Button>
                         <Button variant="outlined" color="primary"  className={classes.button}>
@@ -110,4 +116,4 @@ const StoreCard = (props) => {
 
 };
 
-export default withStyles(style)(StoreCard);
+export default withStyles(style)(StorePage);

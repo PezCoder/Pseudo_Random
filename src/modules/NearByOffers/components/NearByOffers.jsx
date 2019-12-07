@@ -1,5 +1,4 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { geolocated } from 'react-geolocated';
 
@@ -12,19 +11,29 @@ const style = (theme) => ({
 });
 
 const NearByOffers = (props) => {
-    const {classes, showMarkerBottomSheet, isGeolocationAvailable, coords, isGeolocationEnabled} = props;
+    const {classes, showMarkerBottomSheet, isGeolocationAvailable, coords, isGeolocationEnabled, fetchOffers, offers} = props;
     if (!isGeolocationAvailable)  {
         return (<div>Your browser does not support Geolocation</div>);
     }
 
+    const [coordState, setCoordState] = useState(null);
     if (!isGeolocationEnabled) {
         return (<div>Geolocation is not enabled</div>);
     }
+    if (!coordState && coords && coords.latitude) {
+        setCoordState(coords);
+    }
+
+    useEffect(()=> {
+        fetchOffers(coords);
+    }, [coordState]);
+
+
     console.log('coords', coords);
 
     if (coords) {
         return (<>
-            <MapView showMarkerBottomSheet={showMarkerBottomSheet} coords={coords}/>
+            <MapView showMarkerBottomSheet={showMarkerBottomSheet} coords={coords} offers={offers}/>
         </>);
     } else {
         return (<div>Geolocation is not enabled</div>);

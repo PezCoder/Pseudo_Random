@@ -4,8 +4,8 @@ import ActionTypes from '../../../actions/ActionTypes';
 
 
 const mapDispatchToProps = dispatch => ({
-    fetchResumeList: () => {
-        //dispatch({ type: ActionTypes.FETCH_USER_RESUMES });
+    postTransaction: (payload) => {
+        dispatch({ type: ActionTypes.POST_TRANSACTION, payload });
     },
 });
 

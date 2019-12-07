@@ -12,7 +12,7 @@ const style = (theme) => ({
 });
 
 const MapView = (props) => {
-    const {classes, showMarkerBottomSheet, coords = {}} = props;
+    const {classes, showMarkerBottomSheet, coords = {}, offers} = props;
     const options = {
         gestureHandling: 'greedy',
     };
