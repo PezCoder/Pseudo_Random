@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import foodie from '../../../public/images/foodie.png';
 import bigFoodie from '../../../public/images/bigFoodie.png';
 import superFoodie from '../../../public/images/superFoodie.png';
@@ -10,8 +10,15 @@ import goVegan from '../../../public/images/goVegan.png';
 // import dayStreak from '../../../public/images/dayStreak.png';
 // import healthy from '../../../public/images/healthy.png';
 import './badgeshowcase.scss';
+import ActionTypes from "../../actions/ActionTypes";
+import {connect} from "react-redux";
 
-export default function UpcomingBadgeShowcase() {
+function UpcomingBadgeShowcase(props) {
+  const {fetchUpcomingBadges, upcoming} = props;
+
+  useEffect(() => {
+    fetchUpcomingBadges();
+  });
   const medals = [{
     name: 'Go Vegan!',
     imageUrl: goVegan,
@@ -58,3 +65,18 @@ export default function UpcomingBadgeShowcase() {
     </div>
   );
 }
+
+const mapDispatchToProps = dispatch => ({
+    fetchUpcomingBadges: (coords) => {
+        dispatch({ type: ActionTypes.FETCH_UPCOMING_BADGE});
+    },
+});
+
+const mapStateToProps = (state, ownProps) => ({
+    ...ownProps,
+    user: state.user.profile,
+    upcoming: state.badges.upcoming,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UpcomingBadgeShowcase)
+

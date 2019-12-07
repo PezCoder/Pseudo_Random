@@ -3,7 +3,9 @@ import {  ActionTypes } from '../actions';
 import API from '../api/NetworkHandler';
 
 
-const { POST_TRANSACTION, SHOW_GLOBAL_LOADER, HIDE_GLOBAL_LOADER, SHOW_ALERT, FETCH_OFFERS, POPULATE_OFFERS } = ActionTypes;
+const { POST_TRANSACTION, SHOW_GLOBAL_LOADER, HIDE_GLOBAL_LOADER,
+    SHOW_ALERT, FETCH_OFFERS, POPULATE_OFFERS, POPULATE_UPCOMING_BADGE,
+    FETCH_UPCOMING_BADGE, FETCH_COMPLETED_BADGE, POPULATE_COMPLETED_BADGE } = ActionTypes;
 
 
 function* postTransactions(action) {
@@ -33,8 +35,30 @@ function* fetchOffers(action) {
     }
 }
 
+function* fetchCompletedBadge(action) {
+    let response;
+    try {
+        response = yield call(API.sendRequest, 'get', `/completed-badge`);
+        yield put({ type: POPULATE_COMPLETED_BADGE, payload: response.data });
+    } catch (e) {
+        console.error('error', e);
+    }
+}
+
+function* fetchUpComingBadge(action) {
+    let response;
+    try {
+        response = yield call(API.sendRequest, 'get', `/upcoming-badge`);
+        yield put({ type: POPULATE_UPCOMING_BADGE, payload: response.data });
+    } catch (e) {
+        console.error('error', e);
+    }
+}
+
 
 export function* transactionSaga() {
   yield takeEvery(POST_TRANSACTION, postTransactions);
   yield takeEvery(FETCH_OFFERS, fetchOffers);
+  yield takeEvery(FETCH_COMPLETED_BADGE, fetchCompletedBadge);
+  yield takeEvery(FETCH_UPCOMING_BADGE, fetchUpComingBadge);
 }

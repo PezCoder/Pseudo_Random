@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 
 import {BottomNavigation, BottomNavigationAction} from '@material-ui/core';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
-import { Favorite, LocationOn } from '@material-ui/icons';
+import {Favorite, LocationOn} from '@material-ui/icons';
 import PersonIcon from '@material-ui/icons/Person';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 
@@ -32,6 +32,9 @@ const style = (theme) => ({
         background: 'white',
         border: `1px solid ${theme.palette.primary.main}`
     },
+    center: {
+        textAlign: 'center',
+    }
 });
 
 
@@ -49,10 +52,15 @@ const BottomNav = (props) => {
             showLabels
             className={classes.root}
         >
-            <BottomNavigationAction label="Upcoming Badges" icon={<PersonIcon />} component={Link} to="/"/>
-            <BottomNavigationAction label="My Badges" icon={<PersonIcon />} component={Link} to="/badges/all"/>
-            <BottomNavigationAction  label="Order Food" icon={<FastfoodIcon  />} component={Link} to="/stores"/>
-            <BottomNavigationAction label="Nearby" icon={<LocationOn />} component={Link} to="/NearByOffers"/>
+            <BottomNavigationAction label="Upcoming Badges"
+                                    classes={{
+                                        root: classes.center
+                                    }}
+                                    icon={<PersonIcon/>}
+                                    component={Link} to="/"/>
+            <BottomNavigationAction label="My Badges" icon={<PersonIcon/>} component={Link} to="/badges/all"/>
+            <BottomNavigationAction label="Order Food" icon={<FastfoodIcon/>} component={Link} to="/stores"/>
+            <BottomNavigationAction label="Nearby" icon={<LocationOn/>} component={Link} to="/NearByOffers"/>
         </BottomNavigation>
     );
 }

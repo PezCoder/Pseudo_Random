@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import foodie from '../../../public/images/foodie.png';
 import bigFoodie from '../../../public/images/bigFoodie.png';
 import superFoodie from '../../../public/images/superFoodie.png';
@@ -9,9 +9,16 @@ import connoisseur from '../../../public/images/connoisseur.png';
 import goVegan from '../../../public/images/goVegan.png';
 // import dayStreak from '../../../public/images/dayStreak.png';
 // import healthy from '../../../public/images/healthy.png';
-import './badgeshowcase.scss';
+import { connect } from 'react-redux';
 
-export default function BadgeShowcase() {
+import './badgeshowcase.scss';
+import ActionTypes from "../../actions/ActionTypes";
+
+function BadgeShowcase(props) {
+  const {fetchCompletedBadges, completed} = props;
+  useEffect(()=> {
+    fetchCompletedBadges();
+  });
   const medals = [{
     name: 'Foodie',
     imageUrl: foodie,
@@ -44,4 +51,22 @@ export default function BadgeShowcase() {
     </div>
   );
 }
+
+
+
+const mapDispatchToProps = dispatch => ({
+    fetchCompletedBadges: (coords) => {
+        dispatch({ type: ActionTypes.FETCH_COMPLETED_BADGE});
+    },
+});
+
+const mapStateToProps = (state, ownProps) => ({
+    ...ownProps,
+    user: state.user.profile,
+    currentRoute: state.currentRoute,
+    completed: state.badges.completed,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BadgeShowcase)
+
 
