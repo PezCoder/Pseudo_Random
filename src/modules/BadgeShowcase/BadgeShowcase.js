@@ -1,28 +1,43 @@
 import React from 'react';
-import foodLevel1 from '../../../public/images/food-level-1.png';
-import foodLevel2 from '../../../public/images/food-level-2.png';
-import foodLevel3 from '../../../public/images/food-level-3.png';
-import foodLevel4 from '../../../public/images/food-level-4.png';
+import foodie from '../../../public/images/foodie.png';
+import bigFoodie from '../../../public/images/bigFoodie.png';
+import superFoodie from '../../../public/images/superFoodie.png';
+import connoisseur from '../../../public/images/connoisseur.png';
+// import varietyExpert from '../../../public/images/varietyExpert.png';
+// import sweetTooth from '../../../public/images/sweetTooth.png';
+// import hardcoreNonVeg from '../../../public/images/hardcoreNonVeg.png';
+import goVegan from '../../../public/images/goVegan.png';
+// import dayStreak from '../../../public/images/dayStreak.png';
+// import healthy from '../../../public/images/healthy.png';
 import './badgeshowcase.scss';
 
 export default function BadgeShowcase() {
+  const medals = [{
+    name: 'Foodie',
+    imageUrl: foodie,
+  }, {
+    name: 'Big Foodie',
+    imageUrl: bigFoodie,
+  }, {
+    name: 'Super Foodie',
+    imageUrl: superFoodie,
+  }, {
+    name: 'Connoisseur',
+    imageUrl: connoisseur,
+  }, {
+    name: 'Go Vegan!',
+    imageUrl: goVegan,
+  }];
   return (
     <div className="badge-showcase">
-      <div className="each-medal">
-        <img className="food-level-1" src={foodLevel1} alt="logo" />
-        <p>Foodie</p>
-      </div>
-      <div className="each-medal">
-        <img className="food-level-2" src={foodLevel2} alt="logo" />
-        <p>Big Foodie</p>
-      </div>
-      <div className="each-medal">
-        <img className="food-level-3" src={foodLevel3} alt="logo" />
-        <p>Super Foodie</p>
-      </div>
-      <div className="each-medal">
-        <img className="food-level-4" src={foodLevel4} alt="logo" />
-        <p>Connoisseur</p>
+      <h4 className="badge-showcase__heading">YOUR BADGES</h4>
+      <div className="badges">
+        { medals.map(medal => (
+          <div className="each-medal">
+            <img className="food-level-1" src={medal.imageUrl} alt="logo" />
+            <p>{ medal.name }</p>
+          </div>
+        )) }
       </div>
     </div>
   );
