@@ -12,24 +12,27 @@ const style = (theme) => ({
 
 const NearByOffers = (props) => {
     const {classes, showMarkerBottomSheet, isGeolocationAvailable, coords, isGeolocationEnabled, fetchOffers, offers} = props;
-    if (!isGeolocationAvailable)  {
+    console.log('coords', coords);
+
+  if (!isGeolocationAvailable)  {
         return (<div>Your browser does not support Geolocation</div>);
     }
 
     const [coordState, setCoordState] = useState(null);
+
     if (!isGeolocationEnabled) {
         return (<div>Geolocation is not enabled</div>);
     }
-    if (!coordState && coords && coords.latitude) {
-        setCoordState(coords);
+    if (coordState === null && coords && coords.latitude) {
+        //setCoordState(coords);
     }
 
     useEffect(()=> {
+      console.log('calling coords');
         fetchOffers(coords);
-    }, [coordState]);
+    }, [coords]);
 
 
-    console.log('coords', coords);
 
     if (coords) {
         return (<>
