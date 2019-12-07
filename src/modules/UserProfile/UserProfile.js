@@ -2,7 +2,6 @@ import React from 'react';
 import './userProfile.scss';
 import userIcon from '../../../public/images/user-icon.png';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
-import screenshot from '../../../public/images/screenshot.png';
 
 export default function UserProfile() {
   return (
