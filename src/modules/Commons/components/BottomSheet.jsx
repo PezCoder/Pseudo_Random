@@ -3,6 +3,7 @@ import {withStyles} from '@material-ui/core/styles';
 
 import {Close} from '@material-ui/icons';
 
+import OfferCard from '../../NearByOffers/components/OfferCard';
 
 const styles = theme => ({
     root: {
@@ -16,7 +17,7 @@ const styles = theme => ({
         zIndex: 100,
     },
     content: {
-        backgroundColor: '#fff',
+        /*backgroundColor: '#fff',*/
         bottom: 0,
         boxShadow: '0 10px 20px rgba(0,0,0,.22), 0 14px 56px rgba(0,0,0,.25)',
         position: 'fixed',
@@ -68,7 +69,7 @@ const BottomSheet = (props) => {
                 <div className={classes.closeBtn} onClick={handleClose}>
                     <Close/>
                 </div>
-                BottomSheet Content
+               <OfferCard />
             </div>
         </div>
     )
