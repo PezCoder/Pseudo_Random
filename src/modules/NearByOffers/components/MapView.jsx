@@ -6,6 +6,8 @@ import {Favorite, LocationOn, FavoriteBorder} from '@material-ui/icons';
 import OfferMarker from './OfferMarker';
 import UserMarker from './UserMarker';
 import Chip from '@material-ui/core/Chip';
+import {getRandomImg} from '../../../consts/random';
+
 
 const style = (theme) => ({
   root: {
@@ -13,10 +15,10 @@ const style = (theme) => ({
   },
   fixed: {
     '& svg': {
-      color: '#6f9d64',
+      color: '#6f9d64 !important',
     },
     position: 'absolute',
-    zIndex: 4000,
+    zIndex: 9,
     left: '50%',
     transform: 'translateX(-50%)',
   background: 'white',
@@ -49,36 +51,51 @@ const MapView = (props) => {
       lng: 77.597052,
       category: 'food',
       text: '20% CashBack',
+      name: 'Bramha Brewery',
+      img: getRandomImg(),
     },
       {
         lat: 12.888138,
         lng: 77.597347,
         category: 'food',
-        text: '20% OFF'
+        text: '20% OFF',
+        img: getRandomImg(),
+        name: 'Bramha Brewery',
       },
       {
         lat: 12.961038,
         lng: 77.579689,
         category: 'hotel',
-        text: 'Free Upgrade'
+        text: 'Free Upgrade',
+        img: getRandomImg(),
+        name: 'Bramha Brewery',
       },
       {
         lat: 12.961268,
         lng: 77.581995,
         category: 'shopping',
-        text: '50% CashBack'
+        text: '50% CashBack',
+        img: getRandomImg(),
+        name: 'Bramha Brewery',
+
       },
       {
         lat: 12.887333,
         lng: 77.596827,
         category: 'hotel',
-        text: 'Free Upgrade'
+        text: 'Free Upgrade',
+        img: getRandomImg(),
+        name: 'Bramha Brewery',
+
       },
       {
         lat: 12.889407,
         lng: 77.597462,
         category: 'hotel',
-        text: 'Free Upgrade'
+        text: 'Free Upgrade',
+        img: getRandomImg(),
+        name: 'Bramha Brewery',
+
       }
     ]);
   };

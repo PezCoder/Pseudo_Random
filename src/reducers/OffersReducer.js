@@ -1,7 +1,8 @@
 import ActionType from '../actions/ActionTypes';
 
 const initialState = {
-  offers: []
+  offers: [],
+  activeOffer: null,
 };
 
 const OfferReducer = (state = initialState, action) => {
@@ -11,6 +12,11 @@ const OfferReducer = (state = initialState, action) => {
       ...state,
       offers: action.payload,
     };
+    case ActionType.SET_ACTIVE_OFFER:
+      return {
+        ...state,
+        activeOffer: action.payload,
+      };
   default:
     return state;
   }

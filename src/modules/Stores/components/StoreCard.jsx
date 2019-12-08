@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {withStyles} from '@material-ui/core/styles';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import NearMe from '@material-ui/icons/NearMe';
-
+import {getRandomImg, getRandomTag} from '../../../consts/random';
 const style = (theme) => ({
     root: {
         width: '100%'
@@ -15,7 +15,7 @@ const StoreCard = (props) => {
     return (
         <div className="first">
             <div className="food1">
-                <img src="https://p1.picsto.re/X538D.jpg" className="image"/>
+                <img src={getRandomImg()} className="image"/>
                 <h3 className="h3-image">200m</h3>
             </div>
         <div className="description">
@@ -23,7 +23,7 @@ const StoreCard = (props) => {
             <div className="icon orange">
                 <a href="#" className="material-icons icon-orange"><FastfoodIcon/></a>
             </div>
-            <p>il domacca
+            <p>{getRandomTag()}
                 <span className="food-span">78 5th avenue, new york</span>
             </p>
             <div className="like">

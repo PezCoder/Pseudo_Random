@@ -1,7 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { withStyles } from "@material-ui/core/styles";
 import {Avatar, Card, CardMedia, CardContent, Divider, Typography, Chip, Button} from "@material-ui/core";
+import {getRandomTag} from '../../../consts/random';
 const faces = [
     "http://i.pravatar.cc/300?img=1",
     "http://i.pravatar.cc/300?img=2",
@@ -57,18 +57,16 @@ const style = (theme) => ({
 });
 
 const OfferCard = (props) => {
-    const {classes} = props;
+    const {classes, offer} = props;
     return (
         <div className="App">
             <Card className={classes.card}>
                 <div className="wrap">
-                    <div className="ribbon6">20% Off</div>
+                    <div className="ribbon6">{offer.text}</div>
                 </div>
                 <CardMedia
                     className={classes.media}
-                    image={
-                        "https://b.zmtcdn.com/data/pictures/6/18853706/9b437dc670e7284a99e1ab9cfc8b2703.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1204&fith=741&cropw=1200&croph=464&cropoffsetx=-20&cropoffsety=218&cropgravity=NorthWest"
-                    }
+                    image={offer.img}
                 />
                 <CardContent className={classes.content}>
                     <Typography
@@ -76,12 +74,9 @@ const OfferCard = (props) => {
                         variant={"h6"}
                         gutterBottom
                     >
-                        Brahma Brews
+                      {offer.name}
                     </Typography>
-                    <Chip label="MicroBrewery" color="primary" variant="outlined" classes={{
-                        root: classes.chip
-                    }}/>
-                    <Chip label="Casual Dining" color="primary"  variant="outlined" classes={{
+                    <Chip label={getRandomTag()} color="primary" variant="outlined" classes={{
                         root: classes.chip
                     }}/>
                     <Typography

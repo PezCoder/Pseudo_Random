@@ -8,6 +8,7 @@ const mapDispatchToProps = dispatch => ({
         dispatch({ type: ActionTypes.FETCH_OFFERS, payload:coords });
     },
     showMarkerBottomSheet: (info) => {
+        dispatch({type: ActionTypes.SET_ACTIVE_OFFER, payload: info});
         dispatch({type: ActionTypes.SET_BOTTOM_SHEET, payload: info});
     }
 });

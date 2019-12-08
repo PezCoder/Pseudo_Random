@@ -14,7 +14,7 @@ import StoreList from './modules/Stores/containers/StoreList';
 import StorePage from './modules/Stores/containers/StorePage';
 
 
-import Header from './modules/Commons/components/Header';
+import Header from './modules/Commons/containers/Header';
 import BottomNav from './modules/Commons/containers/BottomNav';
 import RouteComponent from './RouteComponent';
 

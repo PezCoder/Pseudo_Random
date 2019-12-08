@@ -1,0 +1,11 @@
+export default [
+  'https://b.zmtcdn.com/data/pictures/6/19001666/51e32a04140274a33e192247cf08f7cf.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1204&fith=803&cropw=1200&croph=464&cropoffsetx=-20&cropoffsety=307&cropgravity=NorthWest',
+  'https://b.zmtcdn.com/data/pictures/chains/3/50943/2f503e743816d77c250b654a5490462f.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1204&fith=880&cropw=1200&croph=464&cropoffsetx=42&cropoffsety=79&cropgravity=NorthWest',
+  'https://b.zmtcdn.com/data/pictures/chains/2/18595782/0c27994c0ba8b44a974bf24723f8ca89.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1209&fith=806&cropw=1200&croph=464&cropoffsetx=4&cropoffsety=298&cropgravity=NorthWest',
+  'https://b.zmtcdn.com/data/pictures/0/18880430/97c348b96140bbc5199864de9b42fe44.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1204&fith=585&cropw=1200&croph=464&cropoffsetx=-2&cropoffsety=101&cropgravity=NorthWest',
+  'https://b.zmtcdn.com/data/pictures/5/18782265/78bd99fa605071dcb0844dd98ea9091f.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1204&fith=802&cropw=1200&croph=464&cropoffsetx=-32&cropoffsety=259&cropgravity=NorthWest',
+  'https://b.zmtcdn.com/data/res_imagery/18430785_RESTAURANT_949e4d38cc184623feddfc7ba433d3e9.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1200&fith=464&cropw=1200&croph=464&cropoffsetx=0&cropoffsety=0&cropgravity=Center',
+  'https://b.zmtcdn.com/data/res_imagery/18407918_RESTAURANT_08e1e13d4584bd4877b85c2a862d1bc1.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1200&fith=464&cropw=1200&croph=464&cropoffsetx=0&cropoffsety=0&cropgravity=Center',
+  'https://b.zmtcdn.com/data/pictures/8/18422898/00b78b92b626c82c3c711d79f1e3188e.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1221&fith=815&cropw=1200&croph=464&cropoffsetx=3&cropoffsety=325&cropgravity=NorthWest',
+  'https://b.zmtcdn.com/data/pictures/2/19159932/2b37869d3d0050c6f2d4bfad17703f7d.jpg?impolicy=newfitandcrop&fittype=ignore&fitw=1324&fith=883&cropw=1200&croph=464&cropoffsetx=20&cropoffsety=286&cropgravity=NorthWest'
+];

@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
   resumeListLoaded: state.user.resumeListLoaded,
   isLoadingResumeList: state.user.isLoadingResumeList,
   resumeList: state.user.resumeList,
+  common: state.common,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

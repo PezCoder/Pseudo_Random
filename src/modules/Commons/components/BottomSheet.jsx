@@ -14,7 +14,7 @@ const styles = theme => ({
         top: 0,
         transition: 'all .45s cubic-bezier(.32,1,.23,1) 0ms',
         width: '100%',
-        zIndex: 100,
+        zIndex: 999999,
     },
     content: {
         /*backgroundColor: '#fff',*/
@@ -40,7 +40,7 @@ const styles = theme => ({
 });
 
 const BottomSheet = (props) => {
-    const {classes, data, handleClose} = props;
+    const {classes, data, handleClose, activeOffer} = props;
     let wrapperRef = null;
     if (!data)
         return null;
@@ -69,7 +69,7 @@ const BottomSheet = (props) => {
                 <div className={classes.closeBtn} onClick={handleClose}>
                     <Close/>
                 </div>
-               <OfferCard />
+               <OfferCard offer={activeOffer} />
             </div>
         </div>
     )
