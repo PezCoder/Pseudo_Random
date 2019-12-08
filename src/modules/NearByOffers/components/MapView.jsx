@@ -141,7 +141,7 @@ const MapView = (props) => {
     <div style={{height: '100vh', width: '100%'}}>
       <Chip label="Offers Based on earned Badges"  icon={<Favorite color="primary"/>} className={classes.fixed}/>
       <GoogleMapReact
-        bootstrapURLKeys={{key: 'AIzaSyAn8R4dZN-0obYkHVF2Z5M4wbQmvKTVMLA'}}
+        bootstrapURLKeys={{key: 'AIzaSyAFucdZ3g_351ahbfokqZyCq8Dvnt8fHPY'}}
         defaultCenter={defaultProps.center}
         options={options}
         onChildClick={handleMapClick}
