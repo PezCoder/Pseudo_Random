@@ -57,10 +57,8 @@ const style = (theme) => ({
 
 const StorePage = (props) => {
     const {classes, postTransaction, match} = props;
-
-    console.log('currentRoute', props);
     const createOrder =  (type) => () => {
-        postTransaction({type, merchantId: match.params.storeId})
+        postTransaction({type, merchantId: match.params.storeId, user_id: 1, amount: 125})
     };
 
     return (
