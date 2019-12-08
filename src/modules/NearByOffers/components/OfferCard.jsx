@@ -2,12 +2,6 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import {Avatar, Card, CardMedia, CardContent, Divider, Typography, Chip, Button} from "@material-ui/core";
 import {getRandomTag} from '../../../consts/random';
-const faces = [
-    "http://i.pravatar.cc/300?img=1",
-    "http://i.pravatar.cc/300?img=2",
-    "http://i.pravatar.cc/300?img=3",
-    "http://i.pravatar.cc/300?img=4"
-];
 const style = (theme) => ({
     card: {
         transition: "0.3s",
@@ -97,11 +91,6 @@ const OfferCard = (props) => {
                             Claim Offer
                         </Button>
                     </div>
-                    <Divider className={classes.divider} light />
-                    {faces.map(face => (
-                        <Avatar className={classes.avatar} key={face} src={face} />
-                    ))}
-
                 </CardContent>
             </Card>
         </div>
