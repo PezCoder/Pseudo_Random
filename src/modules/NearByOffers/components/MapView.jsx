@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {withStyles} from '@material-ui/core/styles';
 import GoogleMapReact from 'google-map-react';
 import {Favorite, LocationOn, FavoriteBorder} from '@material-ui/icons';
@@ -29,7 +29,7 @@ const style = (theme) => ({
 });
 
 const MapView = (props) => {
-  const {classes, showMarkerBottomSheet, coords = {}, offers} = props;
+  const {classes, showMarkerBottomSheet, coords = {}, offers = []} = props;
   const options = {
     gestureHandling: 'greedy',
   };
@@ -41,12 +41,30 @@ const MapView = (props) => {
     },
     zoom: 18
   };
+  useEffect(()=> {
+    let formatedOffers = [];
+    offers.forEach((offer)=> {
+      formatedOffers.push({
+        name: offer.merchant.name,
+        text: offer.coupon.code,
+        lat: offer.merchant.latitude,
+        lng: offer.merchant.longitude,
+        category: 'food',
+        img: getRandomImg(),
+      });
+
+    });
+    console.log('formatedOffers', formatedOffers);
+    setMarkers(formatedOffers);
+
+  }, [offers]);
 
   const [markers, setMarkers] = useState([]);
   const [markerSize, setMarkerSize] = useState('lg');
 
   const onMapLoad = () => {
-    setMarkers([{
+
+/*    setMarkers([{
       lat: 12.888593,
       lng: 77.597052,
       category: 'food',
@@ -97,7 +115,7 @@ const MapView = (props) => {
         name: 'Bramha Brewery',
 
       }
-    ]);
+    ]);*/
   };
 
   const onMarkerClick = function (marker) {

@@ -59,7 +59,7 @@ var className = 'badges';
         { selectedIndex !== null ? <ArrowBackIcon onClick={() => setSelectedIndex(null)} /> : 'UPCOMING BADGES' }
   </h4>
       <div className={className}>
-        { medals.filter(
+        { upcoming.filter(
           (medal, index) => (selectedIndex !== null ? index === selectedIndex : true)
         ).map((medal, index) => (
           <div className="each-medal" onClick={() => selectedIndex === null && setSelectedIndex(index)}>
@@ -69,7 +69,7 @@ var className = 'badges';
             <img className="food-level-1" src={medal.imageUrl} alt="logo" />
             <div className="medal-details">
               <p className="medal-name">{ medal.name }</p>
-              <p className="medal-value">{medal.achieved}/{medal.target} Orders</p>
+              <p className="medal-value">{medal.progress}/{medal.milestone} Orders</p>
               { selectedIndex !== null && <p className="medal-value">{ medal.text }</p> }
             </div>
           </div>

@@ -41,20 +41,29 @@ function* fetchOffers(action) {
 function* fetchCompletedBadge(action) {
     let response;
     try {
+      yield put({ type: SHOW_GLOBAL_LOADER});
         response = yield call(API.sendRequest, 'get', `/user/badges/completed?user_id=1&page_number=0`);
         yield put({ type: POPULATE_COMPLETED_BADGE, payload: response.data });
+      yield put({ type: HIDE_GLOBAL_LOADER });
+
     } catch (e) {
-        console.error('error', e);
+      yield put({ type: HIDE_GLOBAL_LOADER });
+      console.error('error', e);
     }
 }
 
 function* fetchUpComingBadge(action) {
     let response;
     try {
+      yield put({ type: SHOW_GLOBAL_LOADER});
       response = yield call(API.sendRequest, 'get', `/user/badges/upcoming?user_id=1&page_number=0`, {user_id:1, page_number:0});
         yield put({ type: POPULATE_UPCOMING_BADGE, payload: response.data });
+      yield put({ type: HIDE_GLOBAL_LOADER });
+
     } catch (e) {
         console.error('error', e);
+      yield put({ type: HIDE_GLOBAL_LOADER });
+
     }
 }
 
