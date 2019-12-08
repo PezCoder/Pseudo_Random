@@ -13,7 +13,7 @@ function* postTransactions(action) {
   const { payload } = action;
   try {
     yield put({ type: SHOW_GLOBAL_LOADER});
-    response = yield call(API.sendRequest, 'post', '/transaction', payload);
+    response = yield call(API.sendRequest, 'post', '/transactions', payload);
     yield put({ type: HIDE_GLOBAL_LOADER });
     yield put({ type: SHOW_ALERT, payload: { message: 'Successfully Ordered', type: 'success' } });
     window.location = '/';
@@ -31,7 +31,7 @@ function* fetchOffers(action) {
       return;
     }
     try {
-        response = yield call(API.sendRequest, 'get', `/offers?lat=${payload.latitude}&long=${payload.longitude}`);
+      response = yield call(API.sendRequest, 'get', `/user/vicinity/offers?latitude=${payload.latitude}&longitude=${payload.longitude}&user_id=1`);
         yield put({ type: POPULATE_OFFERS, payload: response.data });
     } catch (e) {
         console.error('error', e);
@@ -41,7 +41,7 @@ function* fetchOffers(action) {
 function* fetchCompletedBadge(action) {
     let response;
     try {
-        response = yield call(API.sendRequest, 'get', `/completed-badge`);
+        response = yield call(API.sendRequest, 'get', `/user/badges/completed?user_id=1&page_number=0`);
         yield put({ type: POPULATE_COMPLETED_BADGE, payload: response.data });
     } catch (e) {
         console.error('error', e);
@@ -51,7 +51,7 @@ function* fetchCompletedBadge(action) {
 function* fetchUpComingBadge(action) {
     let response;
     try {
-        response = yield call(API.sendRequest, 'get', `/upcoming-badge`);
+      response = yield call(API.sendRequest, 'get', `/user/badges/upcoming?user_id=1&page_number=0`, {user_id:1, page_number:0});
         yield put({ type: POPULATE_UPCOMING_BADGE, payload: response.data });
     } catch (e) {
         console.error('error', e);

@@ -1,11 +1,11 @@
 let APP_URL = '//grabthon.com/app';
 
-let API_URL = '//localhost:3333';
+let API_URL = '//192.168.43.92:8080';
 if (process.env.NODE_ENV === 'production') {
-  API_URL = '//grabthon.com';
+  API_URL = '//192.168.43.92:8080';
 }
 
-export const API_HOST = `${API_URL}/api`;
+export const API_HOST = `${API_URL}`;
 
 export const ASSETS_URL = `${APP_URL}`;
 
