@@ -18,7 +18,7 @@ function BadgeShowcase(props) {
   const {fetchCompletedBadges, completed} = props;
   useEffect(()=> {
     fetchCompletedBadges();
-  });
+  }, []);
   const medals = [{
     name: 'Super Foodie',
     imageUrl: superFoodie,
@@ -54,7 +54,8 @@ function BadgeShowcase(props) {
     <div className="badge-showcase">
       <h4 className="badge-showcase__heading">YOUR BADGES</h4>
       <div className="badges">
-        { medals.map(medal => (
+        {completed.length === 0 ? (<center><p>No Badge Achived Yet</p></center>): null}
+        { completed.map(medal => (
           <div className="each-medal">
             <img className="original" src={medal.imageUrl} alt="logo" />
             <div className="medal-details">

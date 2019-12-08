@@ -80,10 +80,10 @@ const OfferCard = (props) => {
                         className={"MuiTypography--subheading"}
                         variant={"caption"}
                     >
-                        We are going to learn different kinds of species in nature that live
-                        together to form amazing environment.
+                        Some Offer Description
                     </Typography>
-                    <div className={classes.cta}>
+                  <Divider className={classes.divider} light />
+                  <div className={classes.cta}>
                         <Button variant="outlined" color="primary"  className={classes.button}>
                             Navigate
                         </Button>
