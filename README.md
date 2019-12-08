@@ -1,7 +1,7 @@
 # Badge System UI
 
 
-## Badges System for Wallet usage by By Rahul, Prashant, Aditya and Vivek.
+## Badges System for Wallet usage by By [Rahul](https://github.com/PezCoder), [Prashant](https://github.com/pratt3003), [Aditya](https://github.com/adityakakarot) and [Vivek](https://github.com/vivex).
 
 
 
